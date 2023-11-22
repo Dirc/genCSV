@@ -11,10 +11,19 @@ fileToCSV is a tool which creates or updates a csv file which:
   - (we can manually add the values to the list)
 - count the total of all known values
 
+## Usage
+
+```shell
+./csvGen --dir "./example" --csv "files.csv"
+
+./csvGen --help
+```
+
 ## ToDo
 
 - [x] unit tests
 - [ ] loglevel
-- [ ] CLI
+- [x] CLI
+- [ ] remove files?
 
 
