@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"log"
 	"os"
 	"path/filepath"
@@ -18,7 +17,7 @@ func GetFileList(directory string) []string {
 			fileName := filepath.Base(path)
 			fileList = append(fileList, fileName)
 
-			fmt.Println("File in dir: ", fileName)
+			log.Println("File in dir: ", fileName)
 		}
 		return nil
 	})
@@ -36,14 +35,14 @@ func UpdateCSVStruct(fileName string, csvData []CSVRow) []CSVRow {
 	inCSV := false
 	for _, row := range csvData {
 		if fileName == row.Column1 {
-			fmt.Println("File already in list: ", fileName)
+			log.Println("File already in list: ", fileName)
 			inCSV = true
 			break
 		}
 	}
 
 	if !inCSV {
-		fmt.Println("Add file to list: ", fileName)
+		log.Println("Add file to list: ", fileName)
 		// Create a new instance of the CSVRow struct and populate it with values
 		var row = CSVRow{
 			Column1: fileName,

@@ -1,14 +1,14 @@
 package main
 
 import (
-	"fmt"
+	"log"
 	"strconv"
 )
 
 func SetTotal(csvData []CSVRow) []CSVRow {
 
 	// Calculate total
-	var total int = 0
+	var total int
 	for _, row := range csvData {
 		if row.Column1 != "total" {
 			price, err := strconv.Atoi(row.Column2)
@@ -16,7 +16,7 @@ func SetTotal(csvData []CSVRow) []CSVRow {
 				panic(err)
 			}
 			total += price
-			fmt.Printf("Add: %s, new total: %v\n", row.Column2, total)
+			log.Printf("Add: %s, new total: %v\n", row.Column2, total)
 		}
 	}
 	totalString := strconv.Itoa(total)
@@ -39,7 +39,7 @@ func SetTotal(csvData []CSVRow) []CSVRow {
 		csvData = append(csvData, row)
 	}
 
-	fmt.Printf("Total: %v\n", total)
+	log.Printf("Total: %v\n", total)
 
 	return csvData
 }
