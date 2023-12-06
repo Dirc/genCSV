@@ -19,11 +19,24 @@ fileToCSV is a tool which creates or updates a csv file which:
 ./csvGen --help
 ```
 
+## Build
+
+```shell
+go test
+golangci-lint run # Golang lint tool: https://github.com/golangci/golangci-lint 
+go build
+go install
+
+```
+
 ## ToDo
 
 - [x] unit tests
 - [ ] loglevel
 - [x] CLI
+- [x] golangci-lint
+- [ ] csv content in alphabetic order
+- [ ] print files with "0" value at end?
 - [ ] remove files?
 
 
